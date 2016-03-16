@@ -1,0 +1,1 @@
+java -jar ~/haplox/Github/gatk-protected/target/Queue.jar -S M2_pon.scala --job_queue main.q -qsub -startFromScratch -sc 140 --allbams bamFiles --intervals Lung_Roche.bed --outputprefix TestOut --start_from_scratch -run
