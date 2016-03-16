@@ -14,20 +14,22 @@ class run_M2_dream extends QScript {
   var outputFile: String = ""
   @Argument(shortName = "sc",  required=false, doc = "base scatter count")
   var scatter: Int = 70 
+  /*
   @Argument(shortName = "cosmic",  required=true, doc = "cosmic vcf file ")
   var cosmic: String = ""
   @Argument(shortName = "pon",  required=true, doc = "vcf panel of normal file ")
   var pon: String = ""
-
+   */
     def script() {
 
     val mutect2 = new MuTect2
 
     mutect2.reference_sequence = new File("/haplox/ref/GATK/ucsc.hg19/ucsc.hg19.fasta")
+   /*
     mutect2.cosmic = new File(cosmic)
-    mutect2.dbsnp = new File("/haplox/ref/GATK/knownsites/dbsnp_138.hg19.vcf")
     mutect2.normal_panel = new File(pon)
-
+    */
+    mutect2.dbsnp = new File("/haplox/ref/GATK/knownsites/dbsnp_138.hg19.vcf")
     mutect2.intervalsString = intervalsFile
     mutect2.memoryLimit = 2
     mutect2.input_file = List(new TaggedFile(normalBAM, "normal"), new TaggedFile(tumorBAM, "tumor"))

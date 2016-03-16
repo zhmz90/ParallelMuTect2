@@ -1,0 +1,1 @@
+java -jar ~/haplox/Github/gatk-protected/target/Queue.jar -S M2.scala --job_queue main.q -qsub -startFromScratch -sc 140 --normal normal_bam.bam --tumor tumor_bam.bam  -L Lung_Roche.bed -o Outvariant.vcf --start_from_scratch -run
